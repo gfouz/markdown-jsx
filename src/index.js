@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './Anglican.ttf'; 
+import './Literata.ttf'; 
+import './Trajan.ttf'; 
+import './Optima.ttf'; 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
