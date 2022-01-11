@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   border: none;
   cursor: pointer;
   z-index: 10;
-  margin 2em 0;
+  margin: 2em 0;
   &:focus {
      outline: none;
   }
@@ -28,7 +28,7 @@ const StyledButton = styled.button`
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
-
+    
 
 
     :first-child {

@@ -1,17 +1,19 @@
-  @font-face {
+@font-face {
   font-family: "gabriola";
 
-  src: local("Anglica"),
-    url("./Anglican.ttf") format("truetype");
-
-    src: local("nosifer"),
-    url("./nosifer.ttf") format("truetype");
-
-    src: local("gabriola"),
-    url("./gabriola.ttf") format("truetype");
-
-  font-weight: normal;
-
+  src: local("literata"), url("./fonts/literata.ttf") format("truetype");
+  
+ /* background-color: rgba(212, 212, 212, 0.178); */
 }
 
-
+.hjshdxxx {
+  outline: none;
+  flex-wrap: nowrap;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  grid-template-columns: ;
+  grid-template-rows: ;
+  background-position: ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

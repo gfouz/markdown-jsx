@@ -13,22 +13,25 @@ const StyledSidebar = styled.nav`
   background-color: white;
   transition: all 0.5s;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
      transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
      width:100%;
   }
 
   a {
-    font-size: 1.8rem;
-    font-family: gabriola;
+    display: flex;
+    font-size: 1.5rem;
+    font-family: literata;
     text-transform: uppercase;
     padding: 2rem 2rem;
     font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: ${({ theme }) => theme.primaryDark};
+    letter-spacing: 0.3rem;
+    color: ${({ theme }) => theme.primaryHover};
     text-decoration: none;
     transition: color 0.3s linear;
-
+     div {
+       margin: 0 0.2em;
+     }
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 1.5rem;
       text-align: center;

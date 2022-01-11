@@ -4,22 +4,20 @@ export const GlobalStyles = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
+    max-width: 1300px;
+    height: 100vh;
   }
   *, *::after, *::before {
     box-sizing: border-box;
   }
   body {
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: ${({ theme }) => theme.primaryDark};
-    color: ${({ theme }) => theme.primary};
-   
-    font-family: nosifer, sans-serif;
+    font-family: literata;
     height: 100vh;
-   
+    font-family: expanse;
     text-rendering: optimizeLegibility;
   
   }
+  
+
   `

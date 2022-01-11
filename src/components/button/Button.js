@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import StyledButton  from './StyledButton';
 import {bool, func} from 'prop-types';
 
@@ -21,3 +21,5 @@ const Button = ({open, setOpen})=> {
  };
 
 export default Button;
+
+
