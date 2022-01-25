@@ -31,7 +31,18 @@ const StyledHeader = styled.div`
       }
     }
   }
-
+  .logo {
+    width: var(--tallness);
+    height: var(--tallness);
+    display: ${(props)=>props.logo || "none"};
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    img {
+      width: calc(var(--tallness) - 40%);
+      display: block;
+    }
+  }
   .hidden {
     display: none;
   }
@@ -45,7 +56,7 @@ const StyledHeader = styled.div`
       background: ${({ theme }) => theme.grey800};
       .navbar-links {
         a {
-          color: white;
+          color: #ffffff;
         }
       }
     `}

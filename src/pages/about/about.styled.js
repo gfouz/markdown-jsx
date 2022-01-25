@@ -12,75 +12,152 @@ const StyledAbout = styled.div`
   --beige: #b38f55;
   --amber: #e2cd9a;
 
-  display: grid;
-  grid-template-rows: 60px auto 400px 60px;
-  grid-template-columns: 1fr;
-  height: 100vh;
-  .main {
+  .about-container {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 350px 100px auto 250px auto 150px 70px;
   }
-  .main-title {
-    height: 320px;
+  .upperbar {
+    height: 350px;
+    display: grid;
+    place-items: center;
+  }
+  .upperbar__image {
+    width: 140px;
+  }
+  .outstanding {
+    height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: fit-content;
+    @media (min-width: 500px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
   }
-  .biographic {
+  .outstanding__item {
+    position: relative;
+    text-align: left;
+    height: auto;
+    font-size: calc(0.8em + 1vw);
+    @media (min-width: 500px) {
+      flex: 1;
+      font-size: calc(0.6em + 1vw);
+    }
+  }
+  .outstanding__image-container {
+    border-radius: 50%;
+    text-align: center;
+    width: 90px;
+    height: 90px;
+    margin: 1em 0.5em 0 1em;
+    float: left;
+  }
+  .outstanding__author-image {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .outstanding__title {
+    color: #666666;
+    margin: 0 0.5em 0 1em;
+  }
+  .outstanding__paragraph {
+    margin: 0.5em 1em;
+    color: #777777;
+  }
+  .outstanding__laptop-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .outstanding__image-title {
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    text-shadow: 1px 1px 9px #ffffff;
+  }
+  .outstanding__icon {
+    margin: 0 1em;
+    float: left;
+    img {
+      width: 70px;
+    }
+  }
+  .list-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0.8em;
+  }
+  .list {
+    padding: 0;
+     li {
+      list-style-type: none;
+      margin: 0;
+      color: #33691e;
+    }
+  }
+  .technologies {
+    height: 250px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    @media (max-width: 700px) {
-      flex-direction: column;
+    img {
+      width: 50px;
+      height: auto;
+      margin: 1em;
+    }
+    img:nth-child(3) {
+      width: 60px;
     }
   }
-
-  .biographic__card {
-    height: 350px;
-    width: 320px;
-  }
-  .biographic__card-header {
+  .column {
     display: flex;
-  }
-  .biographic__card-image {
-    width: 150px;
-    height: 150px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    object-fit: cover;
-     &:hover {
-      animation: jello-horizontal 1s both;
-      animation-fill-mode: forwards;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    img:nth-child(3) {
+      width: 40px;
     }
-    
-  }
-  .no-borders {
-    border: 3px solid transparent;
-  }
-  .biographic__card-name {
-    position: relative;
-    left: 20px;
-    color: #000000;
-  }
-  .biographic__card-body {
-    position: relative;
-    top: -10px;
-    text-align: left;
-    color: #414141;
-    strong {
-      color: var(--brick);
+    img:nth-child(1) {
+      width: 80px;
     }
   }
   footer {
-    background-color: #a9561e;
-    line-height: 60px;
+    height: 70px;
+    background-color: #222222;
+    color: #999999;
     text-align: center;
-    color: #ffffff;
+    line-height: 70px;
     font-family: literata;
-    font-size: 30px;
   }
-  button {
-    width: 100px;
-    height:50px;
+  .upperbar__title-container {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 90px;
+    height: 90px;
+    transform: rotate(-80deg);
+    transform-origin: bottom center;
+  }
+  .upperbar__title-container span {
+    position: absolute;
+    bottom: -20px;
+    left: -90px;
+    height: 160px;
+    font-size: 45px;
+    transform-origin: bottom center;
+    color: #ff0000;
   }
 `;
+
+
 
 export default StyledAbout;

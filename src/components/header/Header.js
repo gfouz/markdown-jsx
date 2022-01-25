@@ -2,33 +2,27 @@ import StyledHeader from "./StyledHeader";
 import { useLocation } from "react-router-dom";
 
 export default function Header(props) {
-  const routes = ["/about", "/work", "/blog", "/"];
+  const links = ["/about", "/work", "/blog", "/"];
   const router = useLocation();
-  const pathname = router.pathname;
-  const currentPathnames = routes.filter((routes) => routes !== pathname);
+  const { pathname } = router;
+  const currentlinks = links.filter((link) => link !== pathname);
 
   return (
     <>
       <StyledHeader
-        mixed = {props.mixed}
-        dark={props.dark}
-        light={props.light}
-        primary={props.primary}
         color={props.color}
         bg={props.bg}
         fontFamily={props.font}
-        position = {props.position}
-        height= {props.height}
+        position={props.position}
+        height={props.height}
+        logo={props.logo}
       >
         <div className="links">
-          {currentPathnames.map((items, index) => (
-             <div  key={index} >
-              <a className={items === "/" ? "visible" : "hidden"} href="/">
-                home
-              </a>
-
-              <a className="links__item" href={`${items}`} >
-                    {items.slice(1)}
+        <div className="logo">{props.children}</div>
+          {currentlinks.map((link, index) => (
+            <div key={link + index}>
+              <a className="links__item" href={`${link}`}>
+                {link === "/" ? "home" : link.slice(1)}
               </a>
             </div>
           ))}
