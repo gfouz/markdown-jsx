@@ -6,6 +6,7 @@ import Logo from "../../components/logo/Logo";
 import Project from "../../components/github/Projects";
 import Profile from '../../components/github/Profile'
 import Header from '../../components/header/Header'
+//import Form from '../../components/mui-form/Form'
 
 const Work = () => {
   return (
@@ -36,7 +37,7 @@ const StyledWork = styled.div`
     min-height: 100vh;
     display: grid;
     grid-template-column: 1fr;
-    grid-template-rows: 300px auto auto 60px 70px;
+    grid-template-rows: 300px auto auto 400px 60px 70px;
     background-image: linear-gradient(#071919, #173535);
     &__footer {
        height: 70px;

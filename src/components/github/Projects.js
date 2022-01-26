@@ -33,7 +33,7 @@ const Project = () => {
                   <li className="navbar__item">
                     <a
                       className="navbar__link"
-                      href="https://github.com/gfouz/markdown-jsx.git"
+                      href="https://github.com/gfouz/apollo-server.git"
                     >
                       Apollo-server
                     </a>
@@ -41,7 +41,7 @@ const Project = () => {
                   <li className="navbar__item">
                     <a
                       className="navbar__link"
-                      href="https://github.com/gfouz/markdown-jsx.git"
+                      href="https://github.com/gfouz/nextcms.git"
                     >
                       NextJs-CMS
                     </a>
