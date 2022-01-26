@@ -21,6 +21,7 @@ export const theme = {
   grey800: "#424242",
   grey500: "#9e9e9e",
   mobile: "576px",
+  workbg:"linear-gradient(#071919, #173535)"
 };
 export const colors = {
   bk:"#000000",

@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  --grn: rgb(1, 160, 1);
+  --dark-gr: rgb(58, 52, 52);
+  --gr: rgb(97, 96, 96);
+  --org: orange;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  height: 100%;
+}
+.l-grid-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px auto 60px;
+}
+.l-grid {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.l-grid--row {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.l-grid--center {
+  justify-content: center;
+}
+.paragraph {
+  color: #ffffff;
+  margin: 2em;
+  padding: 0.5em;
+  max-width: 700px;
+  font-size: calc(1em + 1vw);
+  border-left: 1px solid #ffffff;
+}
+.bg-mixed {
+  background-image: linear-gradient(#071919, #173535);
+}
+.title-bar {
+  position: relative;
+  margin: 2em 0 0 0;
+  width: 250px;
+  height: 90px;
+}
+.title-bar__letter {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 115px;
+  width: 20px;
+  height: 170px;
+  transform-origin: bottom;
+  text-shadow: 1px 1px 9px #ffffff;
+}
+.title-bar__letter h1 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 3em;
+  font-family: literata;
+}
+.title {
+  color: #ffffff;
+  font-size: 3em;
+  font-family: literata;
+  text-shadow: 1px 1px 9px #ffffff;
+}
+.title-bar__letter:nth-child(1) {
+  transform: rotate(-40deg);
+}
+.title-bar__letter:nth-child(2) {
+  transform: rotate(-20deg);
+}
+.title-bar__letter:nth-child(3) {
+  transform: rotate(0);
+}
+.title-bar__letter:nth-child(4) {
+  transform: rotate(20deg);
+}
+.title-bar__letter:nth-child(5) {
+  transform: rotate(40deg);
+}
+.projects {
+
+}
+.projects__image {
+  width: 40px;
+  margin: 1em;
+}
+.projects .l-grid .l-grid .projects__image:nth-child(1) {
+  width: 100px;
+}
+.projects__github-links {
+  //border: 1px solid #18ffff;
+  border-radius: 10px;
+  padding:1em;
+}
+.projects__title {
+  color: #ffffff;
+  border-bottom:  1px solid #18ffff;
+}
+.projects__list {
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+.projects__list-item {
+  list-style-type: none;
+  margin: 0.5em 0;
+  
+}
+.projects__list-link {
+  margin: 0;
+  text-decoration: none;
+  color: #ffffff;
+}
+.projects__list-link:hover {
+  color: #15ffff;
+}
+
+footer {
+  height: 60px;
+  color: #ffffff;
+}
+

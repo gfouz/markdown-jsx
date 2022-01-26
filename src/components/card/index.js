@@ -22,13 +22,13 @@ const Card = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
  
   const content1 = (
-    <div className={state.open ? "content1" : "hidden"}>
+    <div className={state.open ? "card__item1" : "hidden"}>
      <img src="/images/children.jpg" className="card__image" />
      <h2>Imagination & Creativity</h2>
     </div>
   );
   const content2 = (
-    <div className={state.open ? "hidden" : "content2"}>
+    <div className={state.open ? "hidden" : "card__item2"}>
       <h4>Imagination is the key to innovation.</h4>
       <p>The ability to imagine things pervades our entire existence. 
          It influences everything we do, think about and create. 
@@ -51,7 +51,7 @@ const Card = (props) => {
     <>
       <StyledCard width={props.width} height={props.height} margin={props.margin}>
         <div className="card">
-        <div className={state.open ? "content1": "content2"}>
+        <div className={state.open ? "card__item1": "card__item2"}>
           {content}
         </div>
 
@@ -80,7 +80,7 @@ const StyledCard = styled.div`
     background-color:#ffffff;
     box-shadow: 1px 1px 9px #000000;
   }
-  .content1 {
+  .card__item1 {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -92,7 +92,7 @@ const StyledCard = styled.div`
       margin: 1em 0;
     }
   }
-  .content2 {
+  .card__item2 {
     border-radius: 5px; 
     animation: dropdown2 0.5s;
     animation-fill-mode: forwards;
@@ -160,3 +160,8 @@ const StyledCard = styled.div`
 `;
 
 export default Card;
+
+//npm install @material-ui/core
+
+//npm install @material-ui/core@next
+
