@@ -109,12 +109,12 @@ const StyledAbout = styled.div`
     justify-content: space-evenly;
     align-items: center;
     img {
-      width: 50px;
+      width: 40px;
       height: auto;
       margin: 1em;
     }
     img:nth-child(3) {
-      width: 60px;
+      width: 40px;
     }
   }
   .column {
@@ -124,7 +124,7 @@ const StyledAbout = styled.div`
     flex-direction: column;
     height: 100%;
     img:nth-child(3) {
-      width: 40px;
+      width: 30px;
     }
     img:nth-child(1) {
       width: 80px;
