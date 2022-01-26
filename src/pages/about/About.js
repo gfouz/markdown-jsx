@@ -74,7 +74,7 @@ const About = () => {
         <section className="outstanding">
           <article className="outstanding__item">
             <div className="outstanding__icon">
-              <img src="/images/lince.png" alt="giovani" />
+              <img src="/images/surprised.svg" alt="giovani" />
             </div>
             <h3 className="outstanding__title">Conceptos importantes</h3>
             <p className="outstanding__paragraph">{content[0].paragraph}</p>
