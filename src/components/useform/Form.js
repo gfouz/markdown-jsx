@@ -9,19 +9,26 @@ function Form() {
     action: "http://formspree.io/gfouz1975@gmail.com",
     method: "POST"
   }
-  const [state, setState] = useState(initialState);
+
   const { register, handleSubmit } = useForm();
+
   const onSubmit = (data) => {
-    setState((prev) => {
-      return { ...prev, email: data.email, message: data.message }
-    })
+     console.log(data)
+      fetch('https://dominio.com/enviar-formulario', {
+       method: 'post',
+       body: data
+  });
   };
   const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
   return (
     <>
       <StyleForm>
         <h4 className="form-title">Contact here!</h4>
-        <form className="l-form" onSubmit={handleSubmit(onSubmit)}>
+        <form 
+         className="l-form"
+         onSubmit={handleSubmit(onSubmit)} 
+         method="POST"
+         action="http://formspree.io/gfouz1975@gmail.com">
           <div className="l-form__item">
             <fieldset className="l-form__fieldset">
               <legend>Your email</legend>
@@ -49,7 +56,7 @@ function Form() {
             </fieldset>
           </div>
           <div className="l-form__item">
-            <button className="l-form__btn" type="submit">Send your message</button>
+            <input className="l-form__btn" type="submit" value="Send your message" />
           </div>
         </form>
       </StyleForm>
