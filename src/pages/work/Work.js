@@ -6,7 +6,7 @@ import Logo from "../../components/logo/Logo";
 import Project from "../../components/github/Projects";
 import Profile from '../../components/github/Profile'
 import Header from '../../components/header/Header'
-//import Form from '../../components/mui-form/Form'
+import Form from '../../components/useform/Form'
 
 const Work = () => {
   return (
@@ -17,6 +17,7 @@ const Work = () => {
             <Logo />
             <Project />
             <Profile />
+            <Form />
             <Header bg="#071919"/>
             <footer className="l-grid__footer">
                  <h4 className="l-grid__title">

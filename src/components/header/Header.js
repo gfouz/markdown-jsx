@@ -2,7 +2,7 @@ import StyledHeader from "./StyledHeader";
 import { useLocation } from "react-router-dom";
 
 export default function Header(props) {
-  const links = ["/about", "/work", "/blog", "/"];
+  const links = ["/about", "/work", "/blog","/contact", "/"];
   const router = useLocation();
   const { pathname } = router;
   const currentlinks = links.filter((link) => link !== pathname);
