@@ -13,33 +13,33 @@ function Form() {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-     console.log(data)
-      fetch('http://formspree.io/gfouz1975@gmail.com', {
-       method: 'post',
-       body: data
-  }).then((response)=> {
-   if(response.ok) {
-       return response.text()
-   } else {
-       throw "Error en la llamada Ajax";
-   }
+    console.log(data)
+    fetch('http://formspree.io/gfouz1975@gmail.com', {
+      method: 'post',
+      body: data
+    }).then((response) => {
+      if (response.ok) {
+        return response.text()
+      } else {
+        throw "Error en la llamada Ajax";
+      }
 
-})
-.then((texto)=> {
-   console.log(texto);
-})
+    })
+      .then((texto) => {
+        console.log(texto);
+      })
 
   };
-    const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
+  const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
   return (
     <>
       <StyleForm>
         <h4 className="form-title">Contact here!</h4>
-        <form 
-         className="l-form"
-         onSubmit={handleSubmit(onSubmit)} 
-         method="POST"
-         >
+        <form
+          className="l-form"
+          onSubmit={handleSubmit(onSubmit)}
+          method="POST"
+        >
           <div className="l-form__item">
             <fieldset className="l-form__fieldset">
               <legend>Your email</legend>
@@ -49,7 +49,7 @@ function Form() {
                 id="email"
                 name="email"
                 autoComplete="off"
-               {...register("email", {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
+                {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
               />
             </fieldset>
           </div>
@@ -60,7 +60,7 @@ function Form() {
                 className="l-form__textfield"
                 id="msg"
                 name="message"
-                {...register("message", { required: true, maxLength: 120})}
+                {...register("message", { required: true, maxLength: 120 })}
               >
               </textarea>
             </fieldset>

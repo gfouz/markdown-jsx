@@ -18,7 +18,7 @@ const StyledAbout = styled.div`
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 350px 100px auto 250px auto 150px 70px;
+    grid-template-rows: 350px 100px auto 250px auto 250px 70px;
   }
   .upperbar {
     height: 350px;
@@ -50,15 +50,15 @@ const StyledAbout = styled.div`
       font-size: calc(0.6em + 1vw);
     }
   }
-  .outstanding__image-container {
+  .outstanding__avatar-container {
     border-radius: 50%;
     text-align: center;
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     margin: 1em 0.5em 0 1em;
     float: left;
   }
-  .outstanding__author-image {
+  .outstanding__avatar {
     border-radius: 50%;
     width: 100%;
     height: 100%;

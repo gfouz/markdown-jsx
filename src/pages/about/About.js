@@ -41,11 +41,11 @@ const About = () => {
         <Header height="100px" bg="#ffffff" color="#ff0000" />
         <section className="outstanding">
           <article className="outstanding__item">
-            <div className="outstanding__image-container">
+            <div className="outstanding__avatar-container">
               <img
                 src="/images/giov.svg"
                 alt="giovani"
-                className="outstanding__author-image"
+                className="outstanding__avatar"
               />
             </div>
             <h3 className="outstanding__title">
@@ -102,7 +102,7 @@ const About = () => {
             </div>
           </article>
         </section>
-        <Contact height="150px" />
+        <Contact height="250px" />
         <footer className="bottom-bar">
           {" "}
           Gfouz &copy; {new Date().getFullYear()}{" "}

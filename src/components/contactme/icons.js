@@ -6,15 +6,22 @@ const fa = {
 };
 
 export const icons = [
-  { icon: <FaGitAlt style={fa} />, url: "https://github.com/gfouz" },
+  { icon: <FaGitAlt style={fa} />, 
+    url: "https://github.com/gfouz",
+    name:"github" },
   {
     icon: <FaTelegram style={fa} />,
     url: "//https://api.whatsapp.com/send?phone=+5354278815",
+    name:"telegram"
   },
-  { icon: <FaEnvelope style={fa} />, url: "https://github.com/gfouz" },
+  { icon: <FaEnvelope style={fa} />,
+    url: "https://github.com/gfouz",
+    name:"email"
+  },
   {
     icon: <FaWhatsapp style={fa} />,
     url: "//https://api.whatsapp.com/send?phone=+5354278815",
+    name:"whatsapp"
   },
 ];
 
