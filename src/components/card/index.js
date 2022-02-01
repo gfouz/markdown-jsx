@@ -160,8 +160,3 @@ const StyledCard = styled.div`
 `;
 
 export default Card;
-
-//npm install @material-ui/core
-
-//npm install @material-ui/core@next
-

@@ -36,7 +36,7 @@ export default Box;
 const StyledBox = styled.div`
   --font: ${(props) => props.font || "1em"};
   --fontcolor: ${(props) => props.fontcolor};
-  position: relative;
+    position: relative;
   .container {
     display: ${(props) => props.display || "block"};
     justify-content: ${(props) => props.justify || "center"};

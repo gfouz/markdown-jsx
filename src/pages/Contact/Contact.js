@@ -4,7 +4,7 @@ import { theme } from "../../theme";
 import { ThemeProvider } from "styled-components";
 import Matrix from "../../components/flexbox/Matrix";
 import Header from "../../components/header/Header";
-import FormCard from "../../components/form/FormCard";
+import FormCard from "../../components/formik/FormCard";
 import { FaGithub, FaGitAlt } from "react-icons/fa";
 import Icons from "../../components/icons/Icons.js";
 import Logos from "../../components/icons/Logos";

@@ -7,19 +7,30 @@ function Form() {
     email: '',
     message: '',
     action: "http://formspree.io/gfouz1975@gmail.com",
-    method: "POST"
+    method: "post"
   }
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
      console.log(data)
-      fetch('https://dominio.com/enviar-formulario', {
+      fetch('http://formspree.io/gfouz1975@gmail.com', {
        method: 'post',
        body: data
-  });
+  }).then((response)=> {
+   if(response.ok) {
+       return response.text()
+   } else {
+       throw "Error en la llamada Ajax";
+   }
+
+})
+.then((texto)=> {
+   console.log(texto);
+})
+
   };
-  const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
+    const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
   return (
     <>
       <StyleForm>
@@ -28,7 +39,7 @@ function Form() {
          className="l-form"
          onSubmit={handleSubmit(onSubmit)} 
          method="POST"
-         action="http://formspree.io/gfouz1975@gmail.com">
+         >
           <div className="l-form__item">
             <fieldset className="l-form__fieldset">
               <legend>Your email</legend>
@@ -38,7 +49,7 @@ function Form() {
                 id="email"
                 name="email"
                 autoComplete="off"
-                {...register("email")}
+               {...register("email", {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
               />
             </fieldset>
           </div>
@@ -49,8 +60,7 @@ function Form() {
                 className="l-form__textfield"
                 id="msg"
                 name="message"
-                maxLength="100"
-                {...register("message")}
+                {...register("message", { required: true, maxLength: 120})}
               >
               </textarea>
             </fieldset>

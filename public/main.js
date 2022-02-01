@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-const contentPath = path.join(__dirname, "./content");
+const contentPath = path.join(__dirname, "../src/content");
 let postlist = [];
 
 const getPosts = async () => {
@@ -55,7 +55,11 @@ const getPosts = async () => {
           date: metadata.date ? metadata.date : "no date given",
           content: content ? content : "no content given",
         };
-        postlist.push(post);
+         postlist.push(post);
+         if(i=== files.length - 1){
+          let data = JSON.stringify(postlist);
+          fs.writeFileSync('src/posts.json', data);
+        }
       });
     });
   });
