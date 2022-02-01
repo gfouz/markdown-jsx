@@ -30,7 +30,6 @@ function Form() {
       })
 
   };
-  const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
   return (
     <>
       <StyleForm>
@@ -74,4 +73,6 @@ function Form() {
   );
 }
 export default Form;
+
+//const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)
 

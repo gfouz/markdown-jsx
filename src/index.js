@@ -6,7 +6,7 @@ import "./fonts/expanse.otf";
 import Home from "./pages/Homepage/Homepage";
 import Work from "./pages/work/Work";
 import About from "./pages/about/About";
-import Contact from "./pages/Contact/Contact";
+import Blog from "./pages/blog/Blog";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./global";
 import { theme } from "./theme";
@@ -22,7 +22,7 @@ ReactDOM.render(
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/work" component={Work} />
-            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/blog" component={Blog} />
           </div>
         </Router>
       </ThemeProvider>
