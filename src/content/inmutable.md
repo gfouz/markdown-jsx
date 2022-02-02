@@ -1,10 +1,11 @@
 ---
-title: function composition
+title: composición funcional
 author: Giovani Fouz Jiménez
+description: El paradigma de la programación funcional es...
 date: january 15, 2022
 ---
 
-## Composición funcional
+  ## Composición funcional
   La composición es la piedra angular que nos permitirá a partir de 
   funciones puras genéricas crear funciones más específicas para al 
   final construir nuestros programas.Similar a como en la música las notas 

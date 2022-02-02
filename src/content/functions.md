@@ -1,10 +1,11 @@
 ---
-title: function composition
+title: Concepto de inmutabilidad
 author: Giovani Fouz Jiménez
-date: january 15, 2022
+description: Que significa inmutabilidad y porque es tan importante...
+date: febraury 3, 2022
 ---
 
-## Mutable or Inmutable
+  ## Mutable or Inmutable
   'const' nos va ayudar a declarar variables inmutables, 
   esto es, a declarar variables cuyo valor no pueda ser 
   cambiado a lo largo del ciclo de vida de una variable.

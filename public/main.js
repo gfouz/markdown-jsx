@@ -4,12 +4,12 @@ const fs = require("fs");
 const contentPath = path.join(__dirname, "../src/content");
 let postlist = [];
 
-const getPosts = async () => {
-  await fs.readdir(contentPath, (err, files) => {
-    if (err) {
-      return console.log(
+const getPosts = () => {
+     fs.readdir(contentPath, (err, files) => {
+        if (err) {
+        return console.log(
         `An error has occured and this is the path: ${dirPath}`
-      );
+        );
     }
 
     files.forEach((file, i) => {
@@ -29,7 +29,7 @@ const getPosts = async () => {
             lines = lines.slice(metadataIndices[1] + 1, lines.length);
           }
           //console.log(lines.join("\n"))
-          return lines;
+          return lines.join(" ");
         };
         const metadataIndices = lines.reduce(getMetadataIndices, []);
 
@@ -53,7 +53,8 @@ const getPosts = async () => {
           title: metadata.title ? metadata.title : "no title given",
           author: metadata.author ? metadata.author : "no author given",
           date: metadata.date ? metadata.date : "no date given",
-          content: content ? content : "no content given",
+          description: metadata.description ? metadata.description : "no given description",
+          content: content ? content : "no  given",
         };
          postlist.push(post);
          if(i=== files.length - 1){
@@ -63,10 +64,17 @@ const getPosts = async () => {
       });
     });
   });
+
 };
 
-setTimeout(() => {
-  let x = postlist.map((item) => console.log(item.title));
-}, 500);
 
 getPosts();
+
+const delay = (ms)=> new Promise((resolve)=> setTimeout(resolve, ms))
+
+const display = async ()=> {
+   await delay(500)
+   console.log(postlist)
+}
+
+display()
