@@ -1,8 +1,8 @@
 ---
-title: Concepto de inmutabilidad
+title: Inmutabilidad
 author: Giovani Fouz Jiménez
 description: Que significa inmutabilidad y porque es tan importante...
-date: febraury 3, 2022
+date: febraury 5, 2022
 ---
 
   ## Mutable or Inmutable

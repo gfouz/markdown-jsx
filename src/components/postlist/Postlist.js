@@ -1,32 +1,30 @@
-import styled from 'styled-components'
-import postlist from '../../posts.json'
-import Markdown from 'react-markdown'
-
+import styled from "styled-components";
+import postlist from "../../posts.json";
+import {Link} from 'react-router-dom';
+import Markdown from "react-markdown";
 
 function PostList() {
-     //const excerpt = postlist.map(post=>post.content.slice(0, 300) + '...' )
+  //const excerpt = postlist.map(post=>post.content.slice(0, 300) + '...' )
   return (
     <>
       <StyledPost>
-        <div className="l-posts">
-          <h1 className="l-post__title">Take a look at these posts!</h1>
-          <div className="posts">
-          {
-            postlist.length && postlist.map((post, i) => {
-              return (
-                <div className="posts__list">
-                  <fieldset className="posts__fieldset">
-                  <legend className="posts__title">{post.title}</legend>
-                  <small className="posts__info">Published on: {post.date} by {post.author}</small>
-                  <Markdown className="posts__body">
-                     {post.description}
-                  </Markdown>
-                  <h5 className="posts__link">Read More</h5>
-                  </fieldset>
-                </div>
-              )
-            })
-          }
+        <div className="postlist">
+          <div className="post">
+            {postlist.length &&
+              postlist.map((post, i) => {
+                return (
+                  <div className="post__list">
+                    <fieldset className="post__fieldset">
+                      <legend className="post__title">{post.title}</legend>
+                      <small className="post__info">
+                        Published on: {post.date} by {post.author}
+                      </small>
+                        <p className="post__description">{post.description}</p>
+                      <Link className="post__link" to={`/post/${post.id}`}>Read More</Link>
+                    </fieldset>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </StyledPost>
@@ -36,43 +34,65 @@ function PostList() {
 export default PostList;
 
 const StyledPost = styled.div`
-.l-posts {
+ height: 100%;
+.postlist {
     display: flex;
     flex-direction:column;
     align-items: center;
-    justify-content: flex-start;
-    color: #777777;
+    justify-content: center;
+    min-height: 100%;
+    margin: 3em 0;
 }
-.posts-grid {
+.post__image {
+  width: 70px;
+}
+.post-grid {
   display: grid;
   place-items: center left;
 }
-.posts__list {
-    padding: 2em;
+.post__list {
+    margin: 2em;
     text-align: left;
     font-family: literata;
   }
-.posts__fieldset {
+.post__fieldset {
+    border-color: #40c4ff;
     border-radius: 5px;
-}  
-.posts__title {
-    color: #ff0000;
-    margin: 0 1em;
-    padding: 0 0.5em;
+    padding: 1em;
+    margin: 0 0.5em;
+    color: #333333;
+    font-size: calc(0.6em + 1vw)
+} 
+
+.post__title {
+    margin: 0 ;
+    padding: 0 0.3em;
+    color: #ffffff;
+    font-weight: bolder;
+    text-transform: uppercase;
   }
-.posts__info {
-    margin: 0 1em;
+.post__info {
+   position: relative;
+   bottom: 10px;
+   color: #ffffff;
 }  
-.posts__body {
-   color: #440044;
-   margin: 2em 1em;
+.post__body {
+  
  }
-.posts__link {
-    margin: 0 1em;
-    padding: 1em 0;
-}   
+.post__description {
+  color: #ffffff;
+}
+.post__link {
+  position: relative;
+  top: 10px;
+  margin: 0 0 1em 0;
+  color: #40c4ff;
+}
 }  
 
 `;
 
- // {/* {`${post.content.join(" ")}`} */}
+// {/*  */} these are comments
+// some picked colors
+// #0f1724 #11ece5   green #7fc549
+// red #fe0002

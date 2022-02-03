@@ -7,6 +7,8 @@ import Home from "./pages/Homepage/Homepage";
 import Work from "./pages/work/Work";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
+import Post from './pages/post/Post'
+import NotFound from './pages/NotFound'
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./global";
 import { theme } from "./theme";
@@ -23,6 +25,8 @@ ReactDOM.render(
             <Route exact path="/about" component={About} />
             <Route exact path="/work" component={Work} />
             <Route exact path="/blog" component={Blog} />
+            <Route exact path="/404" component={NotFound} />
+            <Route exact path="/post/:id"  render={(props) => <Post {...props} />} />
           </div>
         </Router>
       </ThemeProvider>

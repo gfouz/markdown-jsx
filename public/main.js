@@ -1,5 +1,6 @@
-const path = require("path");
-const fs = require("fs");
+const path = require("path")
+const fs = require("fs")
+const getPages = require('./index.js')
 
 const contentPath = path.join(__dirname, "../src/content");
 let postlist = [];
@@ -48,8 +49,10 @@ const getPosts = () => {
         };
         const metadata = parseMetadata({ lines, metadataIndices });
         const content = parseContent({ lines, metadataIndices });
+        const date = new Date(metadata.date);
+        const timestamp = date.getTime() / 1000;
         post = {
-          id: i + 1,
+          id: timestamp,
           title: metadata.title ? metadata.title : "no title given",
           author: metadata.author ? metadata.author : "no author given",
           date: metadata.date ? metadata.date : "no date given",
@@ -69,6 +72,7 @@ const getPosts = () => {
 
 
 getPosts();
+getPages();
 
 const delay = (ms)=> new Promise((resolve)=> setTimeout(resolve, ms))
 
@@ -78,3 +82,7 @@ const display = async ()=> {
 }
 
 display()
+
+
+//Warning: To load an ES module, 
+//set "type": "module" in the package.json or use the .mjs extension.
