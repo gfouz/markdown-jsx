@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom'
 import Markdown from 'react-markdown'
 import postlist from '../../posts.json'
 
-
 function Post(props) {
   const validId = parseInt(props.match.params.id)
   if (!validId) {

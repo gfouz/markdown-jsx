@@ -2,33 +2,33 @@ import styled from 'styled-components'
 import Postlist from '../../components/postlist/Postlist'
 import Header from '../../components/header/Header'
 
-function Blog () {
+function Blog() {
 
-	return(
+  return (
     <>
       <StyledBlog>
-       <div className="blog l-grid">
-         <Header bg="#000100" color="#999999"/>
-         <section className="post l-flex">
-         <article className="post__debut">
-             <h1 className="post__title">BLOG <span>ABOUT</span> MY LEARNING.</h1>
-             <img className="post__image" src="./images/blog.svg" alt="blogIcon" />
-             <h4 className="post__title">FAVORITE <span>TOPICS</span></h4>
-         </article>
-         <main className="post__list ">
-           <Postlist />
-         </main>
-      </section>
-      <section className="free-space">
+        <div className="blog l-grid">
+          <Header bg="#000100" color="#999999" />
+          <section className="post l-flex">
+            <article className="post__debut">
+              <h1 className="post__title">BLOG <span>ABOUT</span> MY LEARNING.</h1>
+              <img className="post__image" src="./images/blog.svg" alt="blogIcon" />
+              <h4 className="post__title">FAVORITE <span>TOPICS</span></h4>
+            </article>
+            <main className="post__list ">
+              <Postlist />
+            </main>
+          </section>
+          <section className="free-space">
 
-      </section>
-      <footer className="blog-footer">
-           <h6>gfouz &copy; {new Date().getFullYear()} made with react</h6>
-      </footer>
-       </div>
-    </StyledBlog>
-  </> 
-		);
+          </section>
+          <footer className="blog-footer">
+            <h6>gfouz &copy; {new Date().getFullYear()} made with react</h6>
+          </footer>
+        </div>
+      </StyledBlog>
+    </>
+  );
 }
 
 export default Blog;

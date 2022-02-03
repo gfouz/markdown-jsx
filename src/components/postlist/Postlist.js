@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import postlist from "../../posts.json";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Markdown from "react-markdown";
 
 function PostList() {
@@ -19,7 +19,7 @@ function PostList() {
                       <small className="post__info">
                         Published on: {post.date} by {post.author}
                       </small>
-                        <p className="post__description">{post.description}</p>
+                      <p className="post__description">{post.description}</p>
                       <Link className="post__link" to={`/post/${post.id}`}>Read More</Link>
                     </fieldset>
                   </div>
