@@ -6,14 +6,15 @@
  /* background-color: rgba(212, 212, 212, 0.178); */
 }
 
-.hjshdxxx {
-  outline: none;
-  flex-wrap: nowrap;
-  animation-fill-mode: forwards;
-  animation-direction: reverse;
-  grid-template-columns: ;
-  grid-template-rows: ;
-  background-position: ;
-  background-size: cover;
-  background-repeat: no-repeat;
+html {
+   --dark-grey: #282923;
+  --dark-blue: #000015;
+  --blue-navy: #121a3e;
+  --blue-easy: #2f495e;
+  --blue-light:#0168b8;
+  --yellow:    #fed700;
+  --reddish:   #d33a2c;
+  --red-gray:  #a22c22;
+  --grey-purple: #110b15;
+  --burnt-yellow: #ff9800;
 }

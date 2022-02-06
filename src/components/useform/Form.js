@@ -2,15 +2,7 @@ import { useForm } from "react-hook-form"
 import StyleForm from './Form.styles'
 
 function Form() {
-  const initialState = {
-    email: '',
-    message: '',
-    action: "http://formspree.io/gfouz1975@gmail.com",
-    method: "post"
-  }
-
   const { register, handleSubmit } = useForm();
-
   const onSubmit = (data) => {
     console.log(data)
     fetch('http://formspree.io/gfouz1975@gmail.com', {
@@ -20,7 +12,7 @@ function Form() {
       if (response.ok) {
         return response.text()
       } else {
-        throw "Error en la llamada Ajax";
+         console.log("an error")
       }
 
     })
@@ -47,7 +39,7 @@ function Form() {
                 id="email"
                 name="email"
                 autoComplete="off"
-                {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}
+               /*  {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ })}  */
               />
             </fieldset>
           </div>

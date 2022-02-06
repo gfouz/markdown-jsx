@@ -8,7 +8,7 @@ function Blog() {
     <>
       <StyledBlog>
         <div className="blog l-grid">
-          <Header bg="#000100" color="#999999" />
+          <Header bg="#00000f" color="#777777" />
           <section className="post l-flex">
             <article className="post__debut">
               <h1 className="post__title">BLOG <span>ABOUT</span> MY LEARNING.</h1>
@@ -34,6 +34,8 @@ function Blog() {
 export default Blog;
 
 const StyledBlog = styled.div`
+--blue-grey: #121a3e;
+--vscode: #19202e;
 .l-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -46,7 +48,7 @@ const StyledBlog = styled.div`
 .blog {
   min-height: 100vh;
   font-family: literata;
-  background-color: #000100;
+  background-color: #00000f;
 }
 .post__debut {
   display: flex;
@@ -84,10 +86,13 @@ const StyledBlog = styled.div`
   color: #ffffff;
 }
 .blog-footer {
-  color: #ffffff;
+  color:  #0168b8;
   display: grid;
   place-items: center;
   text-transform: uppercase;
 }
 
 `;
+
+
+

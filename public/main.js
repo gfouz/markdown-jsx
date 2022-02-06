@@ -30,7 +30,7 @@ const getPosts = () => {
             lines = lines.slice(metadataIndices[1] + 1, lines.length);
           }
           //console.log(lines.join("\n"))
-          return lines.join(" ");
+          return lines.join("\n");
         };
         const metadataIndices = lines.reduce(getMetadataIndices, []);
 

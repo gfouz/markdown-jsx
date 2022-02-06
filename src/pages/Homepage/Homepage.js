@@ -17,7 +17,7 @@ const Home = () => {
         <StyledHome>
           <div className="l-grid">
             <section className="l-grid__item">
-              <h1 className="l-grid__title">portfolio</h1>
+              <h1 className="l-grid__title">port<span className="l-grid__embedded">f</span>olio</h1>
               <div className="l-grid__line"></div>
             </section>
             <nav className="navbar">
@@ -77,8 +77,13 @@ const StyledHome = styled.div`
       text-transform: uppercase;
       font-family: literata;
       font-size: 3em;
+      color: #40c4ff;
       animation: title 1s;
       animation-fill-mode: forwards;
+    }
+    &__embedded {
+      color: #ffffff;
+      text-shadow: 1px 1px 10px #ffffff;
     }
     &__line {
       height: 2px;

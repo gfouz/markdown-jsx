@@ -2,6 +2,7 @@
 title: composición funcional
 author: Giovani Fouz Jiménez
 description: El paradigma de la programación funcional es...
+img: image.jpg
 date: january 15, 2022
 ---
 

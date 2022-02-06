@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import postlist from "../../posts.json";
 import { Link } from 'react-router-dom';
-import Markdown from "react-markdown";
 
 function PostList() {
   //const excerpt = postlist.map(post=>post.content.slice(0, 300) + '...' )
@@ -10,6 +9,7 @@ function PostList() {
       <StyledPost>
         <div className="postlist">
           <div className="post">
+            <h3 className="post__topic">TOPICS TO READ</h3>
             {postlist.length &&
               postlist.map((post, i) => {
                 return (
@@ -50,43 +50,46 @@ const StyledPost = styled.div`
   display: grid;
   place-items: center left;
 }
+.post__topic {
+   color: #0168b8;
+}
 .post__list {
+    color: #c7bfa41;
     margin: 2em;
     text-align: left;
     font-family: literata;
   }
 .post__fieldset {
-    border-color: #40c4ff;
+    border-color:#0168b8;
     border-radius: 5px;
     padding: 1em;
     margin: 0 0.5em;
     color: #333333;
     font-size: calc(0.6em + 1vw)
 } 
-
 .post__title {
-    margin: 0 ;
+    color: #999999;
+    margin: 0;
     padding: 0 0.3em;
-    color: #ffffff;
     font-weight: bolder;
     text-transform: uppercase;
   }
 .post__info {
    position: relative;
    bottom: 10px;
-   color: #ffffff;
+   font-size: small;
 }  
 .post__body {
   
  }
 .post__description {
-  color: #ffffff;
+  color: #999999;
 }
 .post__link {
   position: relative;
   top: 10px;
   margin: 0 0 1em 0;
-  color: #40c4ff;
+  color: #0168b8;
 }
 }  
 
