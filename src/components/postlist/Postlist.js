@@ -3,7 +3,6 @@ import postlist from "../../posts.json";
 import { Link } from 'react-router-dom';
 
 function PostList() {
-  //const excerpt = postlist.map(post=>post.content.slice(0, 300) + '...' )
   return (
     <>
       <StyledPost>
@@ -13,14 +12,19 @@ function PostList() {
             {postlist.length &&
               postlist.map((post, i) => {
                 return (
-                  <div className="post__list">
-                    <fieldset className="post__fieldset">
+                  <div className="post__list" key={post.id}>
+                    <fieldset className="post__fieldset" >
                       <legend className="post__title">{post.title}</legend>
+                      <div className="post__leftside">
                       <small className="post__info">
                         Published on: {post.date} by {post.author}
                       </small>
                       <p className="post__description">{post.description}</p>
                       <Link className="post__link" to={`/post/${post.id}`}>Read More</Link>
+                      </div>
+                      <div className="post__rightside">
+                        <img src={`/images/${post.img}`} alt="react"/>
+                      </div>
                     </fieldset>
                   </div>
                 );
@@ -60,16 +64,29 @@ const StyledPost = styled.div`
     font-family: literata;
   }
 .post__fieldset {
+    display: flex;
+    justify-content: space-between;
     border-color:#0168b8;
     border-radius: 5px;
     padding: 1em;
     margin: 0 0.5em;
     color: #333333;
-    font-size: calc(0.6em + 1vw)
+    font-size: calc(0.6em + 1vw);
+    height: fit-content;
 } 
-.post__title {
-    color: #999999;
-    margin: 0;
+.post__leftside {
+  max-width: 65%;
+}
+.post__rightside {
+  max-width: 35%;
+   img {
+       max-width: 100%;
+       height: 100%;
+       object-fit: cover;
+    }
+}
+.post__title 
+    color: #19202e;
     padding: 0 0.3em;
     font-weight: bolder;
     text-transform: uppercase;
@@ -79,9 +96,6 @@ const StyledPost = styled.div`
    bottom: 10px;
    font-size: small;
 }  
-.post__body {
-  
- }
 .post__description {
   color: #999999;
 }
@@ -89,8 +103,14 @@ const StyledPost = styled.div`
   position: relative;
   top: 10px;
   margin: 0 0 1em 0;
-  color: #0168b8;
+  color: #ff0000;
 }
-}  
+
+ a:active {
+     color: #ff0000;
+   }
+ a:hover {
+     color: green;
+   }
 
 `;

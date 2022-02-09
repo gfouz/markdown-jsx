@@ -4,34 +4,37 @@ import { Redirect } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import postlist from '../../posts.json'
+import posts from '../../posts.json'
 
 function Post(props) {
-  const slug = {}
-  const [post, setPost] = useState('');
-  useEffect(() => {
-    setPost(slug.content)
-  }, []);
-  const validId = parseInt(props.match.params.id)
-  if (!validId) {
+  const [content, setContent] = useState('');
+  const params = parseInt(props.match.params.id);
+  const currentpost = posts.reduce((acc, post)=>{
+      if(params === post.id) {
+        acc = post ? post : "not available data";
+      }
+    return acc;
+
+  },{});
+  
+  useEffect(()=>{
+     setContent(currentpost.content);
+  })
+
+  if (!params) {
     return <Redirect to="/404" />
   }
-  postlist.forEach((post, i) => {
-    if (validId === post.id) {
-      slug.title = post.title ? post.title : "no given title"
-      slug.date = post.date ? post.date : "no given date"
-      slug.author = post.author ? post.author : "no given author"
-      slug.content = post.content ? post.content : "no given content"
-    }
-  })
+
+  
   return (
     <>
       <StyledPost>
         <div className="l-slug">
           <section className="slug">
             <ReactMarkdown
+              id={currentpost.id}
               className="slug__markdown"
-              children={post}
+              children={content}
               components={{
                 code({ node, inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || '')
@@ -60,8 +63,6 @@ function Post(props) {
 export default Post;
 
 const StyledPost = styled.div`
-display: grid;
-place-items: center;
 @mixin l-flex-column  {
   display: flex;
   flex-direction: column;
@@ -72,30 +73,28 @@ place-items: center;
    border: 2px solid #f1f1f1;
    @media (min-width: 700px){
     max-width: 80%;
-    img {
-      text-align: center;
-    }
+
    }
-   code {
-    max-width: 100%;
-  }
+   
 }
 .slug {
   @include l-flex-column;
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-   }
-}
-.slug__content {
-  display: grid;
-  place-items: center ;
-
+  
 }
 .slug__markdown {
    text-align: left;
-   padding: 0 0.1em 3em 0.1em;
+   padding: 0 0 3em 0;
+   h2 {
+    text-align: center;
+    margin: 2em 0 0.5em 0;
+   }
+
+   img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
   
 }
 `;

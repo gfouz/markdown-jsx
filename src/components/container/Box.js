@@ -1,25 +1,26 @@
 import styled from "styled-components";
 
 const Box = (props) => {
+  const properties = {
+        max:props.max,
+        min:props.min,
+        font:props.font,
+        float:props.float,
+        align:props.align,
+        width:props.width,
+        shadow:props.shadow,
+        height:props.height,
+        margin:props.margin,
+        borders:props.borders,
+        padding:props.padding,
+        display:props.display,
+        justify:props.justify,
+        position:props.position,
+        fontcolor:props.fontcolor
+  }   
   return (
     <>
-      <StyledBox
-        max={props.max}
-        min={props.min}
-        width={props.width}
-        height={props.height}
-        margin={props.margin}
-        padding={props.padding}
-        position={props.position}
-        borders={props.borders}
-        font={props.font}
-        fontcolor={props.fontcolor}
-        align={props.align}
-        display={props.display}
-        justify={props.justify}
-        float={props.float}
-        shadow={props.shadow}
-      >
+      <StyledBox {...properties} >
         <div className="container">
           <div className="box__image">
             <img src="/images/gfouz-dev.png" alt="gfouz" />

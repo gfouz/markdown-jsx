@@ -3,12 +3,15 @@ import Postlist from '../../components/postlist/Postlist'
 import Header from '../../components/header/Header'
 
 function Blog() {
-
+    const headerProps = {
+      color:"#990000",
+      bg:"#ffffff"
+    }
   return (
     <>
       <StyledBlog>
         <div className="blog l-grid">
-          <Header bg="#00000f" color="#777777" />
+          <Header {...headerProps} />
           <section className="post l-flex">
             <article className="post__debut">
               <h1 className="post__title">BLOG <span>ABOUT</span> MY LEARNING.</h1>
@@ -48,7 +51,6 @@ const StyledBlog = styled.div`
 .blog {
   min-height: 100vh;
   font-family: literata;
-  background-color: #00000f;
 }
 .post__debut {
   display: flex;
@@ -61,12 +63,11 @@ const StyledBlog = styled.div`
 }
 .post__debut span {
    margin: 0;
-   color: #000000;
-   text-shadow: 1px 1px 9px #ffffff;
+   color: #40c4ff;
 }
 .post__title {
-   color: #ffffff;
-   margin: 2em 0 0 0;
+   color: #990000;
+   margin: 2em 0 1em 0;
    text-align: center;
 }
 .post__list {

@@ -1,11 +1,11 @@
 ---
 title: Inmutabilidad
 author: Giovani Fouz Jiménez
-description: Que significa inmutabilidad y porque es tan importante...
-img: image.jpg
+description: Que significa inmutabilidad y porque es tan importante
+img: react.png
 date: febraury 21, 2022
 ---
-
+![react wallpaper](/images/react.png)
 ## Mutable o Inmutable.
 
 El desarrollo con datos inmutables es un principio fundamental de la

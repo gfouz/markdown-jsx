@@ -1,12 +1,12 @@
 ---
 title: Reactivity
 author: Giovani Fouz Jiménez
-description: Que es la reactividad y porque es tan importante...
-img: image.jpg
+description: Que es la reactividad y porque es tan importante
+img: teacher.jpg
 date: febraury 5, 2022
 ---
 
-![Tux, the Linux mascot](/images/typing.jpg)
+![react wallpaper](/images/teacher.jpg)
 
 ## The non-reactive nature of JavaScript.
 

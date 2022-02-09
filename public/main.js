@@ -56,6 +56,7 @@ const getPosts = () => {
           title: metadata.title ? metadata.title : "no title given",
           author: metadata.author ? metadata.author : "no author given",
           date: metadata.date ? metadata.date : "no date given",
+          img:metadata.img ? metadata.img : "no image given",
           description: metadata.description ? metadata.description : "no given description",
           content: content ? content : "no  given",
         };
