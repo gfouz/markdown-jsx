@@ -1,5 +1,5 @@
 import StyledHeader from "./StyledHeader";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 export default function Header(props) {
   const links = ["/about", "/work", "/blog", "/"];
@@ -21,9 +21,9 @@ export default function Header(props) {
         <div className="logo">{props.children}</div>
           {currentlinks.map((link, index) => (
             <div key={link + index}>
-              <a className="links__item" href={`${link}`}>
+              <Link className="links__item" to={`${link}`} >
                 {link === "/" ? "home" : link.slice(1)}
-              </a>
+              </Link>
             </div>
           ))}
         </div>

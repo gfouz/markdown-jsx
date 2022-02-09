@@ -11,7 +11,7 @@ function Post(props) {
   const [post, setPost] = useState('');
   useEffect(() => {
     setPost(slug.content)
-  }, [slug.content]);
+  }, []);
   const validId = parseInt(props.match.params.id)
   if (!validId) {
     return <Redirect to="/404" />
@@ -60,7 +60,8 @@ function Post(props) {
 export default Post;
 
 const StyledPost = styled.div`
-
+display: grid;
+place-items: center;
 @mixin l-flex-column  {
   display: flex;
   flex-direction: column;
@@ -68,12 +69,24 @@ const StyledPost = styled.div`
   justify-content: flex-start;
 }
 .l-slug {
-   @include l-flex-column;
+   border: 2px solid #f1f1f1;
+   @media (min-width: 700px){
+    max-width: 80%;
+    img {
+      text-align: center;
+    }
+   }
+   code {
+    max-width: 100%;
+  }
 }
 .slug {
-  max-width: 70%;
   @include l-flex-column;
-
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+   }
 }
 .slug__content {
   display: grid;
@@ -82,13 +95,7 @@ const StyledPost = styled.div`
 }
 .slug__markdown {
    text-align: left;
-   padding: 2em;
-   img {
-    max-width: 600px;
-
-  }
-  code {
-    max-width: 600px;
-  }
+   padding: 0 0.1em 3em 0.1em;
+  
 }
 `;
