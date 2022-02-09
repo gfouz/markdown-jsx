@@ -94,8 +94,3 @@ const StyledPost = styled.div`
 }  
 
 `;
-
-// {/*  */} these are comments
-// some picked colors
-// #0f1724 #11ece5   green #7fc549
-// red #fe0002
